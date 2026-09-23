@@ -1,0 +1,49 @@
+[versions]
+agp = "9.1.1"
+kotlin = "2.4.10"
+miuix = "0.9.4"
+composeBom = "2026.06.01"
+# material-icons-extended = "1.7.8"
+activity = "1.13.0"
+lifecycle = "2.11.0"
+# kavaref = "1.1.0"
+core = "1.13.1"
+core-splashscreen = "1.0.1"
+kotlinx-serialization = "1.11.0"
+# materialkolor = "5.0.0"
+aboutlibraries = "11.6.0"
+richeditor = "1.2.0"
+coil = "3.6.1"
+
+[libraries]
+miuix-ui = { group = "top.yukonga.miuix.kmp", name = "miuix-ui-android", version.ref = "miuix" }
+miuix-blur = { group = "top.yukonga.miuix.kmp", name = "miuix-blur-android", version.ref = "miuix" }
+miuix-nav = { group = "top.yukonga.miuix.kmp", name = "miuix-nav-android", version.ref = "miuix" }
+miuix-preference = { group = "top.yukonga.miuix.kmp", name = "miuix-preference", version.ref = "miuix" }
+miuix-icons = { group = "top.yukonga.miuix.kmp", name = "miuix-icons-android", version.ref = "miuix" }
+# material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended", version.ref = "material-icons-extended" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity" }
+lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+# kavaref-bom = { group = "com.highcapable.kavaref", name = "kavaref-bom", version.ref = "kavaref" }
+# kavaref-core = { group = "com.highcapable.kavaref", name = "kavaref-core" }
+# kavaref-android = { group = "com.highcapable.kavaref", name = "kavaref-android" }
+# kavaref-extension = { group = "com.highcapable.kavaref", name = "kavaref-extension" }
+core = { group = "androidx.core", name = "core", version.ref = "core" }
+core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "core-splashscreen" }
+# materialkolor = { group = "com.materialkolor", name = "material-kolor", version.ref = "materialkolor" }
+aboutlibraries-core = { group = "com.mikepenz", name = "aboutlibraries-core", version.ref = "aboutlibraries" }
+richeditor = { group = "com.mohamedrejeb.richeditor", name = "richeditor-compose", version.ref = "richeditor" }
+coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
+coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "coil" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+aboutlibraries = { id = "com.mikepenz.aboutlibraries.plugin", version.ref = "aboutlibraries" }

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyNotes</string>
+
+    <!-- Navigation -->
+    <string name="nav_notes">笔记</string>
+    <string name="nav_settings">设置</string>
+
+    <!-- Common -->
+    <string name="cancel">取消</string>
+    <string name="delete">删除</string>
+    <string name="title_field">标题</string>
+    <string name="untitled">未命名</string>
+    <string name="about">关于</string>
+    <string name="done">完成</string>
+    <string name="save">保存</string>
+    <string name="new_item">新建</string>
+
+    <!-- Settings -->
+    <string name="settings">设置</string>
+    <string name="section_appearance">外观</string>
+    <string name="section_notes">笔记</string>
+    <string name="section_data">数据</string>
+    <string name="section_other">其他</string>
+    <string name="section_navigation">导航</string>
+    <string name="language">语言</string>
+    <string name="language_summary">选择应用显示语言</string>
+    <string name="color_mode">色彩模式</string>
+    <string name="color_mode_summary">选择应用配色方案</string>
+    <string name="key_color">主题色</string>
+    <string name="key_color_summary">Monet 主题的强调色</string>
+    <string name="palette_style">调色板风格</string>
+    <string name="palette_style_summary">色调生成风格</string>
+    <string name="color_spec">色彩规范</string>
+    <string name="color_spec_summary">色彩规范生成方式</string>
+    <string name="blur_effect">模糊效果</string>
+    <string name="blur_effect_summary">为导航栏和顶栏启用背景模糊</string>
+    <string name="blur_effect_power_save">省电模式下不可用</string>
+    <string name="blur_style">模糊样式</string>
+    <string name="blur_style_summary">选择顶栏模糊纹理样式</string>
+    <string name="blur_style_gaussian">高斯模糊</string>
+    <string name="blur_style_progressive">渐进模糊</string>
+    <string name="floating_navbar">悬浮导航栏</string>
+    <string name="floating_navbar_summary">使用悬浮底部导航栏</string>
+    <string name="floating_navbar_style">悬浮导航栏样式</string>
+    <string name="floating_navbar_style_summary">选择悬浮导航栏外观</string>
+    <string name="floating_navbar_style_default">默认</string>
+    <string name="floating_navbar_style_ios">类 iOS</string>
+    <string name="navbar_position">导航栏位置</string>
+    <string name="navbar_position_summary">悬浮导航栏的水平位置</string>
+    <string name="navbar_position_center">居中</string>
+    <string name="navbar_position_start">起始</string>
+    <string name="navbar_position_end">末尾</string>
+    <string name="pin">置顶</string>
+    <string name="read_only">只读</string>
+    <string name="batch_actions">操作</string>
+    <plurals name="selected_count">
+        <item quantity="other">已选 %1$d 项</item>
+    </plurals>
+    <string name="search_bar">搜索栏</string>
+    <string name="search_bar_summary">在笔记列表中显示搜索栏</string>
+    <string name="enter_creates_item">回车新建条目</string>
+    <string name="enter_creates_item_summary">在清单中按回车创建新条目</string>
+    <string name="code_block_wrap">代码块换行</string>
+    <string name="code_block_wrap_summary">代码块启用自动换行（关闭则横向滚动）</string>
+    <string name="export_data">导出数据</string>
+    <string name="export_data_summary">将笔记和设置保存到文件</string>
+    <string name="import_data">导入数据</string>
+    <string name="import_data_summary">从文件恢复笔记和设置</string>
+    <string name="about_summary">MyNotes — Miuix 笔记应用</string>
+
+    <!-- Color mode options -->
+    <string name="color_mode_system">跟随系统</string>
+    <string name="color_mode_light">浅色</string>
+    <string name="color_mode_dark">深色</string>
+    <string name="color_mode_monet_system">Monet 跟随系统</string>
+    <string name="color_mode_monet_light">Monet 浅色</string>
+    <string name="color_mode_monet_dark">Monet 深色</string>
+
+    <!-- Key color options -->
+    <string name="key_color_default">默认</string>
+    <string name="key_color_blue">蓝色</string>
+    <string name="key_color_green">绿色</string>
+    <string name="key_color_purple">紫色</string>
+    <string name="key_color_yellow">黄色</string>
+    <string name="key_color_orange">橙色</string>
+    <string name="key_color_pink">粉色</string>
+    <string name="key_color_teal">青色</string>
+
+    <!-- Language options -->
+    <string name="lang_system">跟随系统</string>
+    <string name="lang_en">English</string>
+    <string name="lang_zh">简体中文</string>
+    <string name="lang_zh_rTW">繁體中文</string>
+    <string name="lang_ja">日本語</string>
+
+    <!-- Import dialog -->
+    <string name="import_dialog_title">导入数据</string>
+    <string name="import_dialog_found">发现 %1$d 条笔记。是否同时覆盖设置偏好？</string>
+    <string name="import_notes_settings">笔记 + 设置</string>
+    <string name="import_notes_only">仅笔记</string>
+
+    <!-- Delete dialog -->
+    <string name="delete_title">删除</string>
+    <string name="delete_confirm">删除「%1$s」？</string>
+    <string name="delete_item_confirm">删除此条目？</string>
+
+    <!-- Notes list -->
+    <string name="search_notes">搜索笔记…</string>
+    <string name="no_matching_notes">没有匹配的笔记</string>
+    <string name="no_notes_yet">暂无笔记</string>
+    <plurals name="images_count">
+        <item quantity="other">%1$d 张图片</item>
+    </plurals>
+
+    <!-- Note editor -->
+    <string name="new_note">新建笔记</string>
+    <string name="edit_note">编辑笔记</string>
+    <string name="start_writing">开始写作…</string>
+    <string name="toolbar_bold">加粗</string>
+    <string name="toolbar_italic">斜体</string>
+    <string name="toolbar_underline">下划线</string>
+    <string name="toolbar_heading1">一级标题</string>
+    <string name="toolbar_heading2">二级标题</string>
+    <string name="toolbar_unordered_list">无序列表</string>
+    <string name="toolbar_ordered_list">有序列表</string>
+    <string name="add_image">添加图片</string>
+    <string name="delete_image">删除图片</string>
+    <string name="note_image">笔记图片</string>
+
+    <!-- Checklist -->
+    <string name="new_checklist">新建清单</string>
+    <string name="edit_checklist">编辑清单</string>
+    <string name="item_placeholder">条目 %1$d</string>
+    <string name="add_item">添加条目</string>
+
+    <!-- About -->
+    <string name="view_source">查看源码</string>
+    <string name="license">许可证</string>
+    <string name="third_party_licenses">第三方许可</string>
+    <string name="background_effect">背景效果</string>
+    <string name="effect_variant">效果变体</string>
+    <string name="dynamic_background">动态背景</string>
+    <string name="full_screen_background">全屏背景</string>
+    <string name="full_size_image">全尺寸图片</string>
+
+    <!-- New item dialog -->
+    <string name="choose_item_type">选择类型</string>
+    <string name="note">笔记</string>
+    <string name="checklist">清单</string>
+
+    <!-- Snackbar / export -->
+    <string name="export_success">成功导出 %1$d 字节</string>
+    <string name="export_failed">导出失败：%1$s — 完整日志位于 %2$s</string>
+    <string name="error_generic">错误：%1$s</string>
+    <string name="imported_notes">已导入 %1$d 条笔记</string>
+</resources>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyNotes</string>
+
+    <!-- Navigation -->
+    <string name="nav_notes">メモ</string>
+    <string name="nav_settings">設定</string>
+
+    <!-- Common -->
+    <string name="cancel">キャンセル</string>
+    <string name="delete">削除</string>
+    <string name="title_field">タイトル</string>
+    <string name="untitled">無題</string>
+    <string name="about">情報</string>
+    <string name="done">完了</string>
+    <string name="save">保存</string>
+    <string name="new_item">新規</string>
+
+    <!-- Settings -->
+    <string name="settings">設定</string>
+    <string name="section_appearance">外観</string>
+    <string name="section_notes">メモ</string>
+    <string name="section_data">データ</string>
+    <string name="section_other">その他</string>
+    <string name="section_navigation">ナビゲーション</string>
+    <string name="language">言語</string>
+    <string name="language_summary">アプリの表示言語を選択</string>
+    <string name="color_mode">カラーモード</string>
+    <string name="color_mode_summary">アプリの配色スキームを選択</string>
+    <string name="key_color">キーカラー</string>
+    <string name="key_color_summary">Monetテーマのアクセントカラー</string>
+    <string name="palette_style">パレットスタイル</string>
+    <string name="palette_style_summary">トーンパレットの生成スタイル</string>
+    <string name="color_spec">カラースペック</string>
+    <string name="color_spec_summary">カラースペックの生成方法</string>
+    <string name="blur_effect">ぼかし効果</string>
+    <string name="blur_effect_summary">ナビゲーションバーとアプリバーに背景ぼかしを有効にする</string>
+    <string name="blur_effect_power_save">省電力モードでは利用できません</string>
+    <string name="blur_style">ぼかしスタイル</string>
+    <string name="blur_style_summary">アプリバーのぼかしテクスチャを選択</string>
+    <string name="blur_style_gaussian">ガウスぼかし</string>
+    <string name="blur_style_progressive">プログレッシブ</string>
+    <string name="floating_navbar">フローティングナビバー</string>
+    <string name="floating_navbar_summary">フローティング下部ナビバーを使用</string>
+    <string name="floating_navbar_style">フローティングナビバーのスタイル</string>
+    <string name="floating_navbar_style_summary">フローティングナビバーの外観を選択</string>
+    <string name="floating_navbar_style_default">デフォルト</string>
+    <string name="floating_navbar_style_ios">iOS風</string>
+    <string name="navbar_position">ナビバーの位置</string>
+    <string name="navbar_position_summary">フローティングナビバーの水平配置</string>
+    <string name="navbar_position_center">中央</string>
+    <string name="navbar_position_start">左端</string>
+    <string name="navbar_position_end">右端</string>
+    <string name="pin">ピン留め</string>
+    <string name="read_only">読み取り専用</string>
+    <string name="batch_actions">アクション</string>
+    <plurals name="selected_count">
+        <item quantity="other">%1$d 件選択中</item>
+    </plurals>
+    <string name="search_bar">検索バー</string>
+    <string name="search_bar_summary">メモ一覧に検索バーを表示</string>
+    <string name="enter_creates_item">Enterで項目作成</string>
+    <string name="enter_creates_item_summary">チェックリストでEnterを押すと新しい項目を作成</string>
+    <string name="code_block_wrap">コードブロックの折り返し</string>
+    <string name="code_block_wrap_summary">コードブロックの折り返しを有効にする（オフ＝横スクロール）</string>
+    <string name="export_data">データのエクスポート</string>
+    <string name="export_data_summary">メモと設定をファイルに保存</string>
+    <string name="import_data">データのインポート</string>
+    <string name="import_data_summary">ファイルからメモと設定を復元</string>
+    <string name="about_summary">MyNotes — Miuix メモアプリ</string>
+
+    <!-- Color mode options -->
+    <string name="color_mode_system">システムに従う</string>
+    <string name="color_mode_light">ライト</string>
+    <string name="color_mode_dark">ダーク</string>
+    <string name="color_mode_monet_system">Monet システム</string>
+    <string name="color_mode_monet_light">Monet ライト</string>
+    <string name="color_mode_monet_dark">Monet ダーク</string>
+
+    <!-- Key color options -->
+    <string name="key_color_default">デフォルト</string>
+    <string name="key_color_blue">青</string>
+    <string name="key_color_green">緑</string>
+    <string name="key_color_purple">紫</string>
+    <string name="key_color_yellow">黄</string>
+    <string name="key_color_orange">オレンジ</string>
+    <string name="key_color_pink">ピンク</string>
+    <string name="key_color_teal">ティール</string>
+
+    <!-- Language options -->
+    <string name="lang_system">システムに従う</string>
+    <string name="lang_en">English</string>
+    <string name="lang_zh">简体中文</string>
+    <string name="lang_zh_rTW">繁體中文</string>
+    <string name="lang_ja">日本語</string>
+
+    <!-- Import dialog -->
+    <string name="import_dialog_title">データのインポート</string>
+    <string name="import_dialog_found">%1$d 件のメモが見つかりました。設定の上書きも行いますか？</string>
+    <string name="import_notes_settings">メモ + 設定</string>
+    <string name="import_notes_only">メモのみ</string>
+
+    <!-- Delete dialog -->
+    <string name="delete_title">削除</string>
+    <string name="delete_confirm">「%1$s」を削除しますか？</string>
+    <string name="delete_item_confirm">この項目を削除しますか？</string>
+
+    <!-- Notes list -->
+    <string name="search_notes">メモを検索…</string>
+    <string name="no_matching_notes">一致するメモがありません</string>
+    <string name="no_notes_yet">メモはまだありません</string>
+    <plurals name="images_count">
+        <item quantity="other">%1$d 枚の画像</item>
+    </plurals>
+
+    <!-- Note editor -->
+    <string name="new_note">新規メモ</string>
+    <string name="edit_note">メモを編集</string>
+    <string name="start_writing">書き始める…</string>
+    <string name="toolbar_bold">太字</string>
+    <string name="toolbar_italic">斜体</string>
+    <string name="toolbar_underline">下線</string>
+    <string name="toolbar_heading1">見出し 1</string>
+    <string name="toolbar_heading2">見出し 2</string>
+    <string name="toolbar_unordered_list">箇条書き</string>
+    <string name="toolbar_ordered_list">番号付きリスト</string>
+    <string name="add_image">画像を追加</string>
+    <string name="delete_image">画像を削除</string>
+    <string name="note_image">メモの画像</string>
+
+    <!-- Checklist -->
+    <string name="new_checklist">新規チェックリスト</string>
+    <string name="edit_checklist">チェックリストを編集</string>
+    <string name="item_placeholder">項目 %1$d</string>
+    <string name="add_item">項目を追加</string>
+
+    <!-- About -->
+    <string name="view_source">ソースを表示</string>
+    <string name="license">ライセンス</string>
+    <string name="third_party_licenses">サードパーティーライセンス</string>
+    <string name="background_effect">背景エフェクト</string>
+    <string name="effect_variant">エフェクトバリアント</string>
+    <string name="dynamic_background">ダイナミック背景</string>
+    <string name="full_screen_background">全画面背景</string>
+    <string name="full_size_image">フルサイズ画像</string>
+
+    <!-- New item dialog -->
+    <string name="choose_item_type">種類を選択</string>
+    <string name="note">メモ</string>
+    <string name="checklist">チェックリスト</string>
+
+    <!-- Snackbar / export -->
+    <string name="export_success">%1$d バイトをエクスポートしました</string>
+    <string name="export_failed">エクスポート失敗：%1$s — フルログ：%2$s</string>
+    <string name="error_generic">エラー：%1$s</string>
+    <string name="imported_notes">%1$d 件のメモをインポートしました</string>
+</resources>
