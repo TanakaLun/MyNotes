@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -347,7 +348,9 @@ private fun NoteCard(
                         imageVector = MiuixIcons.Pin,
                         contentDescription = null,
                         tint = cardColors.contentColor.copy(alpha = 0.85f),
-                        modifier = Modifier.padding(start = 6.dp),
+                        modifier = Modifier
+                            .padding(start = 6.dp)
+                            .size(16.dp),
                     )
                 }
             }
@@ -460,7 +463,9 @@ private fun ChecklistSummaryCard(
                         imageVector = MiuixIcons.Pin,
                         contentDescription = null,
                         tint = cardColors.contentColor.copy(alpha = 0.85f),
-                        modifier = Modifier.height(16.dp),
+                        modifier = Modifier
+                            .padding(start = 6.dp)
+                            .size(16.dp),
                     )
                 }
             }

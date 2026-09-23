@@ -67,7 +67,7 @@
     <string name="export_data_summary">將筆記和設定儲存到檔案</string>
     <string name="import_data">匯入資料</string>
     <string name="import_data_summary">從檔案還原筆記和設定</string>
-    <string name="about_summary">MyNotes — Miuix 筆記應用</string>
+    <string name="about_summary">MyNotes — 一款簡約但不簡單的筆記應用</string>
 
     <!-- Color mode options -->
     <string name="color_mode_system">跟隨系統</string>

@@ -243,7 +243,7 @@ private fun Home(
     }
 
     val exportLauncher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.CreateDocument("*/*"),
+        contract = ActivityResultContracts.CreateDocument("application/x-mynotes-backup"),
     ) { uri ->
         if (uri != null) {
             kotlinx.coroutines.MainScope().launch {
@@ -332,7 +332,7 @@ private fun Home(
                         onAboutClick = onAboutClick,
                         onExportClick = {
                             val dateStr = SimpleDateFormat("yyyyMMdd", Locale.getDefault()).format(Date())
-                            exportLauncher.launch("mynotes-$dateStr")
+                            exportLauncher.launch("mynotes-$dateStr.mnbackup")
                         },
                         onImportClick = {
                             importLauncher.launch(arrayOf("*/*"))

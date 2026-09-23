@@ -67,7 +67,7 @@
     <string name="export_data_summary">メモと設定をファイルに保存</string>
     <string name="import_data">データのインポート</string>
     <string name="import_data_summary">ファイルからメモと設定を復元</string>
-    <string name="about_summary">MyNotes — Miuix メモアプリ</string>
+    <string name="about_summary">MyNotes — シンプルでありながら洗練されたノートアプリ</string>
 
     <!-- Color mode options -->
     <string name="color_mode_system">システムに従う</string>

@@ -17,8 +17,8 @@ android {
         applicationId = "io.github.tanakalun.mynotes"
         minSdk = 33
         targetSdk = 37
-        versionCode = 39
-        versionName = "Siren"
+        versionCode = 40
+        versionName = "Horizontal"
     
     packaging {
         resources {

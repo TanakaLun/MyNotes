@@ -43,10 +43,17 @@ import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.input.pointer.PointerEventPass
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalUriHandler
+import androidx.compose.ui.platform.UriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextLayoutResult
+import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontFamily
@@ -63,6 +70,8 @@ import coil3.request.crossfade
 import io.github.tanakalun.mynotes.R
 import com.mohamedrejeb.richeditor.annotation.ExperimentalRichTextApi
 import com.mohamedrejeb.richeditor.model.HeadingStyle
+import com.mohamedrejeb.richeditor.model.RichSpanStyle
+import com.mohamedrejeb.richeditor.model.RichTextState
 import com.mohamedrejeb.richeditor.model.rememberRichTextState
 import com.mohamedrejeb.richeditor.ui.BasicRichTextEditor
 import io.github.tanakalun.mynotes.SettingsStore
@@ -328,6 +337,9 @@ fun NoteEditorPage(
                         when (segment) {
                             is ContentSegment.Text -> {
                                 val richState = rememberRichTextState()
+                                var textLayoutResult by remember { mutableStateOf<TextLayoutResult?>(null) }
+                                val uriHandler = LocalUriHandler.current
+                                val linkColor = MiuixTheme.colorScheme.primary
                                 LaunchedEffect(segment.id, segment.markdown) {
                                     val currentMd = richState.toMarkdown()
                                     if (currentMd != segment.markdown) {
@@ -337,14 +349,59 @@ fun NoteEditorPage(
                                 LaunchedEffect(segment.id) {
                                     richTextStates[segment.id] = richState
                                 }
+                                LaunchedEffect(richState, linkColor) {
+                                    richState.config.linkColor = linkColor
+                                }
                                 BasicRichTextEditor(
                                     state = richState,
                                     readOnly = readOnly,
+                                    onTextLayout = { textLayoutResult = it },
                                     modifier = Modifier
                                         .fillMaxWidth()
                                         .onFocusChanged { focusState ->
                                             if (focusState.isFocused) {
                                                 focusedSegmentId = segment.id
+                                            }
+                                        }
+                                        .pointerInput(richState, uriHandler) {
+                                            awaitPointerEventScope {
+                                                var downPos: Offset? = null
+                                                var downAt = 0L
+                                                while (true) {
+                                                    val event =
+                                                        awaitPointerEvent(PointerEventPass.Initial)
+                                                    val change = event.changes.firstOrNull()
+                                                        ?: continue
+                                                    val wasPressed = change.previousPressed
+                                                    val isPressed = change.pressed
+                                                    if (isPressed && !wasPressed) {
+                                                        downPos = change.position
+                                                        downAt = change.uptimeMillis
+                                                    } else if (downPos != null) {
+                                                        val dist =
+                                                            (change.position - downPos).getDistance()
+                                                        if (isPressed) {
+                                                            if (dist > viewConfiguration.touchSlop) {
+                                                                downPos = null
+                                                            }
+                                                        } else if (wasPressed) {
+                                                            val pos = downPos
+                                                            downPos = null
+                                                            val duration =
+                                                                change.uptimeMillis - downAt
+                                                            if (dist <= viewConfiguration.touchSlop &&
+                                                                duration < viewConfiguration.longPressTimeoutMillis
+                                                            ) {
+                                                                openLinkAtPosition(
+                                                                    state = richState,
+                                                                    layout = textLayoutResult,
+                                                                    position = pos,
+                                                                    uriHandler = uriHandler,
+                                                                )
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             }
                                         },
                                     textStyle = TextStyle(
@@ -615,5 +672,34 @@ private fun FormatIconButton(
             contentDescription = description,
             tint = MiuixTheme.colorScheme.onSurface,
         )
+    }
+}
+
+@OptIn(ExperimentalRichTextApi::class)
+private fun openLinkAtPosition(
+    state: RichTextState,
+    layout: TextLayoutResult?,
+    position: Offset,
+    uriHandler: UriHandler,
+) {
+    val layoutResult = layout ?: return
+    val length = layoutResult.layoutInput.text.length
+    if (length == 0) return
+    val index = layoutResult.getOffsetForPosition(position)
+    val candidates = listOf(index, index - 1).filter { it in 0 until length }
+    for (i in candidates) {
+        val span = state.getRichSpanStyle(TextRange(i, i + 1))
+        if (span is RichSpanStyle.Link) {
+            openUrl(uriHandler, span.url)
+            return
+        }
+    }
+}
+
+private fun openUrl(uriHandler: UriHandler, url: String) {
+    val target = if (url.contains("://")) url else "https://$url"
+    try {
+        uriHandler.openUri(target)
+    } catch (_: Exception) {
     }
 }
